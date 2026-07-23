@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProCAST Results Export"
+  short_description: "Export ProCAST numerical fields and native media"
+  default_prompt: "Use $procast-results-export to design a reproducible export for this completed ProCAST case."

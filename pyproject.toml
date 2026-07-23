@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "procast-abaqus-batch-mcp"
+version = "0.1.0"
+description = "Codex skills, batch utilities, and an MCP server for ProCAST-to-Abaqus engineering workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Yan-Kai Chen"}]
+dependencies = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Repository = "https://github.com/Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP"
+Issues = "https://github.com/Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP/issues"
+
+[project.optional-dependencies]
+mcp = ["mcp[cli]>=1.0"]
+dev = ["pytest>=8", "ruff>=0.6", "PyYAML>=6"]
+
+[project.scripts]
+procast-abaqus = "procast_abaqus_agent.cli:main"
+procast-abaqus-mcp = "procast_abaqus_agent.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

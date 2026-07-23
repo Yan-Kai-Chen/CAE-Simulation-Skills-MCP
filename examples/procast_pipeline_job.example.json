@@ -1,0 +1,30 @@
+{
+  "schema": "procast_pipeline_job_v1",
+  "job_name": "example_readonly_plan",
+  "environment_config": "environment.example.json",
+  "output_root": "../outputs/example_readonly_plan",
+  "case": {
+    "case_dir": "C:/engineering/cases/example",
+    "prefix": "case001",
+    "input_vdb": "C:/engineering/cases/example/case001.vdb",
+    "input_unf": "C:/engineering/cases/example/case001g.unf",
+    "time_csv": "C:/engineering/cases/example/case001.csv"
+  },
+  "execution": {
+    "plan_only": true,
+    "authorized_solver_actions": false
+  },
+  "stages": {
+    "preflight": {"enabled": true},
+    "readiness": {"enabled": true},
+    "solver_setup": {"enabled": false},
+    "solver_launch": {"enabled": false},
+    "target_step": {"enabled": false},
+    "restart_prepare": {"enabled": false},
+    "restart_launch": {"enabled": false},
+    "restart_target_step": {"enabled": false},
+    "numerical_export": {"enabled": true},
+    "native_export": {"enabled": false},
+    "video_compose": {"enabled": false}
+  }
+}

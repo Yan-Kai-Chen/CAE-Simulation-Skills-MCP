@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProCAST Field Transfer"
+  short_description: "Transfer ProCAST fields across engineering meshes"
+  default_prompt: "Use $procast-field-transfer to map this ProCAST field onto a different engineering mesh."

@@ -1,0 +1,35 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+dist/
+build/
+
+# Vendor solver payloads and engineering data
+*.odb
+*.sim
+*.prt
+*.sta
+*.msg
+*.com
+*.dat
+*.res
+*.unf
+*.vdb
+*.asf
+*.ntl
+*.cas.h5
+*.dat.h5
+*.msh.h5
+*.npz
+*.npy
+*.parquet
+
+# Local machine configuration and run output
+config/local*.json
+runs/
+outputs/
+artifacts/
+*.log

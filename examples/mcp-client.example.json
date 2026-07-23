@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "procast-abaqus": {
+      "command": "python",
+      "args": ["-m", "procast_abaqus_agent.mcp_server"]
+    }
+  }
+}

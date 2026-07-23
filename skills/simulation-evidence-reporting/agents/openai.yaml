@@ -1,0 +1,4 @@
+interface:
+  display_name: "Simulation Evidence Reporting"
+  short_description: "Report simulation evidence without overclaiming"
+  default_prompt: "Use $simulation-evidence-reporting to turn these simulation results into defensible manuscript claims."

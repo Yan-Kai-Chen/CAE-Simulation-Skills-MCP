@@ -1,0 +1,27 @@
+{
+  "schema": "procast_abaqus_environment_v1",
+  "name": "local_workstation",
+  "procast": {
+    "version": "2022.0",
+    "root": "C:/vendor/ProCAST/2022.0",
+    "launcher": "C:/vendor/ProCAST/2022.0/bin/pamcmxdmp.bat"
+  },
+  "visual_environment": {
+    "version": "18.0",
+    "root": "C:/Program Files/ESI Group/Visual-Environment/18.0",
+    "batch": "C:/Program Files/ESI Group/Visual-Environment/18.0/Windows-x64/VEBatch.bat",
+    "common_resources": "C:/Program Files/ESI Group/Visual-Environment/18.0/COMMON/Resources"
+  },
+  "abaqus": {
+    "version": "2025",
+    "command_path": "C:/vendor/SIMULIA/Commands/abaqus.bat"
+  },
+  "tools": {
+    "python": "python",
+    "ffmpeg": "ffmpeg"
+  },
+  "machine": {
+    "ve_requires_admin": false,
+    "solver_requires_admin": false
+  }
+}

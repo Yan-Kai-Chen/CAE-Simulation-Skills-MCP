@@ -1,0 +1,4 @@
+interface:
+  display_name: "Abaqus XFEM Visualization"
+  short_description: "Create validated publication XFEM figures"
+  default_prompt: "Use $abaqus-xfem-visualization to render and validate publication-ready XFEM figures."

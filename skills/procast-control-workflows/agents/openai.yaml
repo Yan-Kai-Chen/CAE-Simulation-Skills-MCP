@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProCAST Control Workflows"
+  short_description: "Plan and control ProCAST solver workflows"
+  default_prompt: "Use $procast-control-workflows to inspect and plan this ProCAST case safely."
