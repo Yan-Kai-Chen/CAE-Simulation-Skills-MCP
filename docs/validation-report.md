@@ -2,6 +2,9 @@
 
 Date: 2026-07-23
 
+Public repository:
+`https://github.com/Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP`
+
 ## Passed checks
 
 - Eight Python tests passed in a repository-local virtual environment.
@@ -14,6 +17,7 @@ Date: 2026-07-23
 - No private workstation/project path was found outside ignored build files.
 - No raw or proprietary solver result file was included.
 - No credential, API key, bearer token, or private-key material was found.
+- GitHub Actions CI completed successfully on the initial public push.
 
 ## Publication boundary
 

@@ -11,7 +11,7 @@
 - [ ] Forward-test the orchestration and evidence-reporting skills.
 - [ ] Test one read-only ProCAST preflight and one Abaqus status parse on a
       second workstation if available.
-- [ ] Initialize remote only after the preceding checks pass.
+- [x] Create the public GitHub remote and push `main`.
 
 Local validation was completed on 2026-07-23. The public target is
 `Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP` under the MIT License. The remaining
