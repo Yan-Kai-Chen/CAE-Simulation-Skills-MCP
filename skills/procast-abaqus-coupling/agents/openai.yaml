@@ -1,4 +1,0 @@
-interface:
-  display_name: "ProCAST Abaqus Coupling"
-  short_description: "Orchestrate ProCAST-to-Abaqus simulation handoffs"
-  default_prompt: "Use $procast-abaqus-coupling to plan the complete ProCAST-to-Abaqus handoff."

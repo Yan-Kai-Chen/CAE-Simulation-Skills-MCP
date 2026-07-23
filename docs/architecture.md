@@ -1,24 +1,44 @@
 # Architecture
 
+## Engineering chain
+
+```text
+ProCAST thermal evidence
+    -> coordinate/unit registration
+    -> Fluent full-cycle melting, expansion and drainage
+    -> Fluent-informed restrained-expansion pressure history
+    -> Abaqus global XFEM initiation
+    -> Abaqus local damage/opening
+    -> evidence and Agent feedback
+```
+
+The three solvers answer different questions:
+
+- ProCAST supplies accepted upstream thermal and casting-process evidence.
+- Fluent resolves physical-time wax state, drainage and load release.
+- Abaqus resolves Shell stress, XFEM connectivity, damage and opening.
+
+No field may silently change meaning between stages.
+
+## Software layers
+
 ```text
 User / Codex
     |
-    +-- Skills: workflow reasoning, physics rules, authorization boundaries
+    +-- Skills: workflow reasoning, physics and evidence contracts
     |
-    +-- CLI: deterministic read-only environment/status/index utilities
+    +-- CLI: deterministic read-only checks and metrics
     |
-    +-- Optional MCP (stdio): the same read-only CLI capabilities as tools
+    +-- MCP (stdio): the same read-only core as seven tools
     |
-    +-- Vendor adapters: explicit VE/ProCAST/Abaqus scripts selected by skills
+    +-- Vendor adapters: explicit ProCAST / VE / Fluent / Abaqus scripts
             |
-            +-- Local licensed installations and private case data
+            +-- Licensed local installations and private case data
 ```
 
-Skills decide *what* a valid engineering workflow is. Core Python implements
-small stable operations that do not need vendor imports. Vendor adapters are
-kept explicit because they depend on installation version, permissions,
-licenses and case state.
+Skills decide what constitutes a valid workflow. Core Python implements stable
+vendor-independent reads. Vendor adapters remain explicit because they depend
+on version, license, permissions and live solver state.
 
-The architecture avoids turning a long-lived MCP process into a hidden solver
-controller. A future mutation-capable server should be a separate package with
-an authorization protocol, run ownership and process-identity checks.
+A future mutation-capable MCP must remain a separate package with an
+authorization protocol, run ownership and process-identity checks.

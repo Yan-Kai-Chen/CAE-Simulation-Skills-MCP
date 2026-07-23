@@ -1,3 +1,3 @@
-"""Portable helpers for ProCAST-to-Abaqus agent workflows."""
+"""Portable helpers for ProCAST-Fluent-Abaqus agent workflows."""
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

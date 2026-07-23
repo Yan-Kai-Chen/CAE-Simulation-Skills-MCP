@@ -7,17 +7,20 @@ Public repository:
 
 ## Passed checks
 
-- Eight Python tests passed in a repository-local virtual environment.
+- Ten Python tests passed in a repository-local virtual environment.
 - Ruff reported no issues.
-- All seven Codex skills passed `quick_validate.py`.
-- The optional MCP server registered exactly five read-only tools:
-  `check_environment`, `plan_pipeline`, `get_run_status`, `get_job_status`, and
-  `index_artifacts`.
-- CLI smoke tests passed for environment checking and pipeline planning.
+- All ten Codex skills passed `quick_validate.py`.
+- The optional MCP server registered exactly seven read-only tools:
+  `check_environment`, `plan_pipeline`, `get_run_status`,
+  `get_fluent_run_status`, `get_job_status`,
+  `compute_pressure_risk_metrics`, and `index_artifacts`.
+- CLI smoke tests passed for environment checking, pipeline planning, Fluent
+  run inspection, and pressure-risk metric calculation.
 - No private workstation/project path was found outside ignored build files.
 - No raw or proprietary solver result file was included.
 - No credential, API key, bearer token, or private-key material was found.
-- GitHub Actions CI completed successfully on the initial public push.
+- GitHub Actions CI completed successfully on the initial public push. The
+  v0.2 Fluent expansion is checked again after publication.
 
 ## Publication boundary
 

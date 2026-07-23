@@ -1,6 +1,6 @@
 ---
 name: abaqus-wax-shell-fracture
-description: Build, screen, run, extract, and validate wax-pressure-driven Abaqus XFEM Shell-fracture analyses without prescribing an initial crack. Use when Codex must transfer a physical-time pressure history to a Shell, screen candidate edge/root regions, run global initiation and local opening models, continue a restart, compare designs, or interpret STATUSXFEM, CSDMG, CRKOPEN and energy histories.
+description: Build, screen, run, extract, and validate Fluent- or ProCAST-informed wax-pressure-driven Abaqus XFEM Shell-fracture analyses without prescribing an initial crack. Use when Codex must transfer a physical-time pressure history to a Shell, screen candidate edge/root regions, run global initiation and local opening models, continue a restart, compare designs, or interpret STATUSXFEM, CSDMG, CRKOPEN and energy histories.
 ---
 
 # Abaqus Wax-Shell Fracture
@@ -8,9 +8,9 @@ description: Build, screen, run, extract, and validate wax-pressure-driven Abaqu
 ## Preserve the load history
 
 Use the complete accepted physical-time grid rather than sparse field anchors.
-Keep pressure reconstruction, structural accommodation and material
-sensitivity parameters explicit. Do not add a crack-location kernel or pressure
-gain to force the expected morphology.
+Keep the Fluent melt/drainage source, pressure reconstruction, structural
+accommodation and material sensitivity parameters explicit. Do not add a
+crack-location kernel or pressure gain to force the expected morphology.
 
 Read `references/fracture-evidence-gates.md` before interpreting results.
 

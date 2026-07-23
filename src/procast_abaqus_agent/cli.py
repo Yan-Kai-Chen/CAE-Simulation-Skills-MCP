@@ -7,7 +7,9 @@ from typing import Any, Callable
 from .abaqus import get_job_status
 from .artifacts import index_artifacts
 from .config import check_environment
+from .fluent import get_fluent_run_status
 from .procast import get_run_status, plan_pipeline
+from .risk import compute_pressure_risk_metrics
 
 
 def _emit(value: dict[str, Any]) -> int:
@@ -36,6 +38,28 @@ def build_parser() -> argparse.ArgumentParser:
     abaqus.add_argument("--job-dir", required=True)
     abaqus.add_argument("--job-name", required=True)
     abaqus.set_defaults(handler=lambda a: get_job_status(a.job_dir, a.job_name))
+
+    fluent = sub.add_parser("fluent-status")
+    fluent.add_argument("--run-root", required=True)
+    fluent.set_defaults(handler=lambda a: get_fluent_run_status(a.run_root))
+
+    risk = sub.add_parser("pressure-risk")
+    risk.add_argument("--csv", required=True)
+    risk.add_argument("--time-column", default="time_s")
+    risk.add_argument("--pressure-column", required=True)
+    risk.add_argument("--threshold-mpa", type=float, required=True)
+    risk.add_argument("--temperature-column")
+    risk.add_argument("--activation-temperature-c", type=float)
+    risk.set_defaults(
+        handler=lambda a: compute_pressure_risk_metrics(
+            a.csv,
+            a.pressure_column,
+            a.threshold_mpa,
+            a.time_column,
+            a.temperature_column,
+            a.activation_temperature_c,
+        )
+    )
 
     artifacts = sub.add_parser("index-artifacts")
     artifacts.add_argument("--root", required=True)

@@ -1,29 +1,31 @@
 # MCP boundary
 
-## Included in version 0.1
+## Included in version 0.2
 
-- environment JSON validation;
+- environment JSON validation for ProCAST, Visual-Environment, Fluent and
+  Abaqus;
 - ProCAST pipeline-plan validation;
 - ProCAST run-status parsing;
+- Fluent monitor/result status parsing;
 - Abaqus job-status parsing;
+- physical-time pressure-risk metrics;
 - processed-artifact indexing.
 
-These functions are read-only, deterministic and independently testable.
+These seven functions are read-only, deterministic and independently testable.
 
 ## Intentionally excluded
 
-- starting or stopping ProCAST/Abaqus;
+- starting or stopping any solver;
 - administrator elevation;
-- GUI clicks or Visual-Environment sessions;
-- editing VDBs or solver decks;
+- GUI clicks or vendor sessions;
+- editing VDB, Fluent case/data or Abaqus input decks;
 - deleting locks or result files;
 - running long exports or simulations.
 
-Those actions remain explicit skill-directed scripts. This keeps consent,
-vendor state and process ownership visible to the user.
+Those actions remain explicit skill-directed scripts so consent, vendor state
+and process ownership stay visible.
 
 ## Client configuration
 
-After `pip install -e ".[mcp]"`, configure an stdio MCP server with command
-`procast-abaqus-mcp`. The implementation uses the official Python SDK import
-`mcp.server.fastmcp.FastMCP` and calls `run(transport="stdio")`.
+After `pip install -e ".[mcp]"`, start `procast-fluent-abaqus-mcp`. The
+implementation uses `mcp.server.fastmcp.FastMCP` over stdio.

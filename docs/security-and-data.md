@@ -4,7 +4,8 @@ Never commit:
 
 - license files, tokens, credentials or user profile configuration;
 - ProCAST/Visual-Environment/Abaqus/Fluent binaries or proprietary modules;
-- raw `.unf`, `.vdb`, `.asf`, `.odb`, restart or solver database files;
+- raw `.unf`, `.vdb`, `.asf`, `.odb`, Fluent `.cas.h5`/`.dat.h5`/`.msh.h5`,
+  restart, or solver database files;
 - private meshes, experiment photographs or unpublished material data;
 - local absolute paths that reveal usernames or internal storage structure.
 

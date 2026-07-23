@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProCAST Fluent Abaqus Coupling"
+  short_description: "Orchestrate the three-stage fracture workflow"
+  default_prompt: "Use $procast-fluent-abaqus-coupling to plan the complete ProCAST-Fluent-Abaqus fracture workflow."

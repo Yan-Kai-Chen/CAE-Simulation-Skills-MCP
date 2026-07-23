@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fluent Wax-Shell Load Extraction"
+  short_description: "Extract physical-time wax-to-shell load histories"
+  default_prompt: "Use $fluent-wax-shell-load-extraction to build a traceable wax-to-shell load history."

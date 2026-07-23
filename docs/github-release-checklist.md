@@ -4,11 +4,12 @@
 - [x] Select and add a public software license.
 - [x] Review authorship and citation metadata.
 - [x] Run `pytest` and `ruff check .` in a fresh environment.
-- [x] Validate all seven skills with `quick_validate.py`.
-- [x] Install the optional MCP dependency and list all five tools.
+- [x] Validate all ten skills with `quick_validate.py`.
+- [x] Install the optional MCP dependency and list all seven tools.
 - [x] Run path, credential, large-file and proprietary-extension scans.
 - [x] Confirm examples contain synthetic paths and no research data.
-- [ ] Forward-test the orchestration and evidence-reporting skills.
+- [ ] Forward-test the three-solver orchestration and evidence-reporting skills
+      on a second licensed workstation.
 - [ ] Test one read-only ProCAST preflight and one Abaqus status parse on a
       second workstation if available.
 - [x] Create the public GitHub remote and push `main`.

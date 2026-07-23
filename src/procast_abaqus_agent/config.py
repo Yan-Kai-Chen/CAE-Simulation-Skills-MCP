@@ -31,7 +31,7 @@ def check_environment(config_path: str | Path) -> dict[str, Any]:
         raise ValueError("schema must be procast_abaqus_environment_v1")
 
     checks: list[dict[str, Any]] = []
-    for group_name in ("procast", "visual_environment", "abaqus", "tools"):
+    for group_name in ("procast", "visual_environment", "fluent", "abaqus", "tools"):
         group = data.get(group_name, {})
         if not isinstance(group, dict):
             continue

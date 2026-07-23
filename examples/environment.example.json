@@ -12,6 +12,10 @@
     "batch": "C:/Program Files/ESI Group/Visual-Environment/18.0/Windows-x64/VEBatch.bat",
     "common_resources": "C:/Program Files/ESI Group/Visual-Environment/18.0/COMMON/Resources"
   },
+  "fluent": {
+    "version": "2024 R1",
+    "command_path": "C:/Program Files/ANSYS Inc/v241/fluent/ntbin/win64/fluent.exe"
+  },
   "abaqus": {
     "version": "2025",
     "command_path": "C:/vendor/SIMULIA/Commands/abaqus.bat"

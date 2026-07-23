@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fluent Dewaxing Batch Workflows"
+  short_description: "Run and resume full-cycle wax-melting batches"
+  default_prompt: "Use $fluent-dewaxing-batch-workflows to plan a reproducible Fluent dewaxing batch."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fluent Fracture Risk Metrics"
+  short_description: "Quantify pressure activation, peak, and exposure"
+  default_prompt: "Use $fluent-fracture-risk-metrics to compute single-case fracture-driving pressure metrics."
