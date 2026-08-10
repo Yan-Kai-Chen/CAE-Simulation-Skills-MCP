@@ -10,7 +10,8 @@ Public repository target:
 - Editable installation completed for version `0.3.0` with development and
   MCP extras.
 - All `13` Python tests passed.
-- Ruff reported no issues.
+- Ruff `0.15.22` reported no issues; the development dependency is pinned so
+  local and CI apply the same lint baseline.
 - All `16` Codex skills passed `quick_validate.py`.
 - The optional MCP server registered exactly eight read-only tools:
   `check_environment`, `plan_pipeline`, `get_run_status`,

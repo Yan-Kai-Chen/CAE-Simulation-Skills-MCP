@@ -24,7 +24,7 @@ Issues = "https://github.com/Yan-Kai-Chen/CAE-Simulation-Skills-MCP/issues"
 
 [project.optional-dependencies]
 mcp = ["mcp[cli]>=1.0"]
-dev = ["pytest>=8", "ruff>=0.6", "PyYAML>=6"]
+dev = ["pytest>=8", "ruff==0.15.22", "PyYAML>=6"]
 
 [project.scripts]
 cae-simulation = "procast_abaqus_agent.cli:main"
