@@ -10,7 +10,7 @@
 - [x] Run concise path, credential, proprietary-extension, and large-file
       scans.
 - [x] Confirm examples contain only synthetic paths and values.
-- [ ] Push through the required GitHub proxy and verify CI.
+- [x] Push through the required GitHub proxy and verify CI.
 - [ ] Forward-test licensed local adapters on another workstation when
       available.
 
