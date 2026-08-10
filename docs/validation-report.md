@@ -12,6 +12,8 @@ Public repository target:
 - All `13` Python tests passed.
 - Ruff `0.15.22` reported no issues; the development dependency is pinned so
   local and CI apply the same lint baseline.
+- The optional MCP dependency is constrained to the compatible `1.x` API;
+  MCP `2.x` uses a different server module layout.
 - All `16` Codex skills passed `quick_validate.py`.
 - The optional MCP server registered exactly eight read-only tools:
   `check_environment`, `plan_pipeline`, `get_run_status`,
