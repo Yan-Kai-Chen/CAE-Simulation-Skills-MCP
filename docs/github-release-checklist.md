@@ -1,19 +1,18 @@
 # GitHub release checklist
 
-- [x] Confirm repository owner and final public name.
-- [x] Select and add a public software license.
-- [x] Review authorship and citation metadata.
-- [x] Run `pytest` and `ruff check .` in a fresh environment.
-- [x] Validate all ten skills with `quick_validate.py`.
-- [x] Install the optional MCP dependency and list all seven tools.
-- [x] Run path, credential, large-file and proprietary-extension scans.
-- [x] Confirm examples contain synthetic paths and no research data.
-- [ ] Forward-test the three-solver orchestration and evidence-reporting skills
-      on a second licensed workstation.
-- [ ] Test one read-only ProCAST preflight and one Abaqus status parse on a
-      second workstation if available.
-- [x] Create the public GitHub remote and push `main`.
+- [x] Confirm owner and `CAE-Simulation-Skills-MCP` repository identity.
+- [x] Retain the MIT License and update citation metadata.
+- [x] Run the complete Python test suite and Ruff.
+- [x] Validate all 16 skills with `quick_validate.py`.
+- [x] Install the optional MCP dependency and list all eight tools.
+- [x] Run environment, pressure-risk, artifact, and evidence-dictionary CLI
+      smoke tests.
+- [x] Run concise path, credential, proprietary-extension, and large-file
+      scans.
+- [x] Confirm examples contain only synthetic paths and values.
+- [ ] Push through the required GitHub proxy and verify CI.
+- [ ] Forward-test licensed local adapters on another workstation when
+      available.
 
-Local validation was completed on 2026-07-23. The public target is
-`Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP` under the MIT License. The remaining
-unchecked validation items require a second licensed workstation.
+The second-workstation checks are useful compatibility evidence but are not a
+release blocker for the portable skills and read-only core.

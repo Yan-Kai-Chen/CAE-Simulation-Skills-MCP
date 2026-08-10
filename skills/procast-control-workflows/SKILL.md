@@ -25,7 +25,7 @@ Read `references/control-contract.md` before a real solver operation.
 - Resolve and validate installation paths with
   `scripts/resolve_procast_environment.ps1`.
 - Read a run snapshot with `scripts/get_procast_solver_status.ps1` or the
-  portable `procast-abaqus procast-status` command.
+  portable `cae-simulation procast-status` command.
 - Keep Visual-Cast VDB persistence, DataCAST preprocessing, solver launch,
   target-step stop and restart as distinct stages and manifests.
 

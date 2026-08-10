@@ -7,6 +7,7 @@ from typing import Any, Callable
 from .abaqus import get_job_status
 from .artifacts import index_artifacts
 from .config import check_environment
+from .evidence import validate_evidence_dictionary
 from .fluent import get_fluent_run_status
 from .procast import get_run_status, plan_pipeline
 from .risk import compute_pressure_risk_metrics
@@ -18,7 +19,7 @@ def _emit(value: dict[str, Any]) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="procast-abaqus")
+    parser = argparse.ArgumentParser(prog="cae-simulation")
     sub = parser.add_subparsers(dest="command", required=True)
 
     env = sub.add_parser("env-check")
@@ -65,6 +66,10 @@ def build_parser() -> argparse.ArgumentParser:
     artifacts.add_argument("--root", required=True)
     artifacts.add_argument("--include-raw", action="store_true")
     artifacts.set_defaults(handler=lambda a: index_artifacts(a.root, a.include_raw))
+
+    evidence = sub.add_parser("validate-evidence-dictionary")
+    evidence.add_argument("--csv", required=True)
+    evidence.set_defaults(handler=lambda a: validate_evidence_dictionary(a.csv))
     return parser
 
 

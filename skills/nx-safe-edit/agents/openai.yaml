@@ -1,0 +1,4 @@
+interface:
+  display_name: "NX Safe Edit"
+  short_description: "Edit NX models through controlled working copies"
+  default_prompt: "Use $nx-safe-edit to inspect and safely edit a copied Siemens NX model."

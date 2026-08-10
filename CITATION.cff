@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "If you use this toolkit, please cite the software repository."
-title: "ProCAST-Fluent-Abaqus Batch MCP"
+title: "CAE Simulation Skills MCP"
 type: software
 authors:
   - family-names: "Chen"
     given-names: "Yan-Kai"
-repository-code: "https://github.com/Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP"
+repository-code: "https://github.com/Yan-Kai-Chen/CAE-Simulation-Skills-MCP"
 license: MIT
-version: 0.2.0
-date-released: 2026-07-23
+version: 0.3.0
+date-released: 2026-08-10

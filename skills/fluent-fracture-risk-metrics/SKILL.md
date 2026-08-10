@@ -31,7 +31,7 @@ increasing physical time.
 Use the `compute_pressure_risk_metrics` MCP tool or:
 
 ```text
-procast-fluent-abaqus pressure-risk --csv <history.csv> --pressure-column <column> \
+cae-simulation pressure-risk --csv <history.csv> --pressure-column <column> \
   --threshold-mpa <value>
 ```
 

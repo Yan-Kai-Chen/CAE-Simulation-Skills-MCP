@@ -1,4 +1,4 @@
 interface:
   display_name: "Simulation Evidence Reporting"
-  short_description: "Report simulation evidence without overclaiming"
-  default_prompt: "Use $simulation-evidence-reporting to turn these simulation results into defensible manuscript claims."
+  short_description: "Freeze data dictionaries and defensible claims"
+  default_prompt: "Use $simulation-evidence-reporting to freeze these results into a canonical data dictionary and defensible manuscript claims."

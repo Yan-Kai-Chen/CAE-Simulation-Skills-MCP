@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "procast-abaqus": {
+    "cae-simulation": {
       "command": "python",
       "args": ["-m", "procast_abaqus_agent.mcp_server"]
     }

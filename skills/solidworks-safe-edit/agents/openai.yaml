@@ -1,0 +1,4 @@
+interface:
+  display_name: "SolidWorks Safe Edit"
+  short_description: "Edit and export SolidWorks working copies safely"
+  default_prompt: "Use $solidworks-safe-edit to inspect, edit, rebuild, and export a copied SolidWorks model."

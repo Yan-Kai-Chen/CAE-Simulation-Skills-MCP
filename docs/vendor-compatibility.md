@@ -1,18 +1,20 @@
 # Vendor compatibility
 
-The private validation history includes ProCAST 2022, Visual-Environment 18,
-Fluent 2024 R1, Abaqus 2025 and Windows PowerShell. These versions demonstrate
-one working route; they are not a compatibility guarantee.
+The project contains version-aware engineering contracts for Siemens NX,
+SolidWorks, HyperMesh, ProCAST, Visual-Environment, Fluent, and Abaqus. A
+workflow demonstrated on one release is not a compatibility guarantee for all
+releases.
 
-Keep installation paths, administrator requirements and launcher commands in
-local environment configuration. Detect missing vendor APIs at runtime and
-fail with an actionable message. Do not import vendor-only modules in the core
-package or test suite.
+Keep installation paths, permissions, launch commands, and license settings in
+local configuration. Detect missing vendor APIs at runtime and fail with an
+actionable message. Do not import vendor-only modules in the core package or
+test suite.
 
-When adding support for another release, record:
+When adding another release, record:
 
 - software version and operating system;
-- launcher and batch entry points;
-- result-field names and export behavior;
-- permission/elevation requirement;
-- one read-only preflight and one finite smoke result.
+- launcher, batch, journal, or adapter entry point;
+- input/output formats and naming behavior;
+- unit and coordinate behavior;
+- permission or elevation requirement;
+- one read-only preflight and one finite synthetic smoke result.

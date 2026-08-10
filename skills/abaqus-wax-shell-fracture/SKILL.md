@@ -1,6 +1,6 @@
 ---
 name: abaqus-wax-shell-fracture
-description: Build, screen, run, extract, and validate Fluent- or ProCAST-informed wax-pressure-driven Abaqus XFEM Shell-fracture analyses without prescribing an initial crack. Use when Codex must transfer a physical-time pressure history to a Shell, screen candidate edge/root regions, run global initiation and local opening models, continue a restart, compare designs, or interpret STATUSXFEM, CSDMG, CRKOPEN and energy histories.
+description: Build, screen, run, extract, and validate Fluent- or ProCAST-informed wax-pressure-driven Abaqus XFEM Shell-fracture analyses without prescribing an initial crack. Use when Codex must transfer a physical-time pressure history, compare objective candidate regions, separate an independent onset check from a primary full-growth route, resolve a topology-verified vent, apply continuous reduced-order pressure feedback, compare designs, or interpret STATUSXFEM, CSDMG, CRKOPEN and energy histories.
 ---
 
 # Abaqus Wax-Shell Fracture
@@ -24,6 +24,15 @@ Read `references/fracture-evidence-gates.md` before interpreting results.
    observed morphology.
 5. Run the global model before selecting a buffered worst-location local model.
 
+When experiment morphology informs validation, separate two roles:
+
+- use a mechanics-only multi-candidate branch without the observed crack
+  location as an independent location/onset check;
+- use one accepted buffered local branch as the primary full-growth route.
+
+Do not present a candidate branch that reaches its enrichment-window boundary
+as an unrestricted propagation prediction.
+
 ## Run and continue
 
 Datacheck before solving. Use the smallest stabilization that converges and
@@ -31,6 +40,21 @@ require stabilization and kinetic energy to remain small relative to internal
 energy. For a local continuation, transfer exact cut-boundary displacement
 histories, retain the physical pressure history and record the restart time
 offset.
+
+## Continue to a verified vent
+
+1. Distinguish first cohesive damage, first fully cracked element, and first
+   connected inner-to-outer path.
+2. Search the vent event coarsely, then replay from the last unvented state at
+   a finer output interval.
+3. Activate pressure relief only when one fully cracked face-connected
+   component touches both the loaded inner surface and physical exterior.
+4. Keep pressure continuous at the event. Use a documented reduced-order
+   feedback law rather than deleting the pressure instantaneously.
+5. Continue through peak load and unloading. Treat reduced opening with
+   irreversible topology as closure, not healing.
+6. Report post-vent connected-extent growth separately from completion of
+   already intersected crack elements.
 
 ## Compare designs fairly
 

@@ -4,6 +4,10 @@ Never commit:
 
 - license files, tokens, credentials or user profile configuration;
 - ProCAST/Visual-Environment/Abaqus/Fluent binaries or proprietary modules;
+- Siemens NX, SolidWorks, HyperMesh, or other licensed CAD/meshing binaries,
+  macros, unrestricted journals, or proprietary modules;
+- private `.prt`, SolidWorks, Parasolid, STEP, STL, HyperMesh, or solver mesh
+  files;
 - raw `.unf`, `.vdb`, `.asf`, `.odb`, Fluent `.cas.h5`/`.dat.h5`/`.msh.h5`,
   restart, or solver database files;
 - private meshes, experiment photographs or unpublished material data;

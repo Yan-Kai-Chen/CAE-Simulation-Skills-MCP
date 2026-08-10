@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reverse CAD Modeling"
+  short_description: "Rebuild rough geometry into cleaner CAD"
+  default_prompt: "Use $reverse-cad-modeling to classify and reconstruct rough or faceted geometry into CFD-ready CAD."
