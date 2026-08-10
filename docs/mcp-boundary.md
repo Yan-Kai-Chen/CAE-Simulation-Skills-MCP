@@ -1,31 +1,33 @@
 # MCP boundary
 
-## Included in version 0.2
+## Included in version 0.3
 
-- environment JSON validation for ProCAST, Visual-Environment, Fluent and
-  Abaqus;
-- ProCAST pipeline-plan validation;
-- ProCAST run-status parsing;
+- environment JSON validation for NX, SolidWorks, HyperMesh, ProCAST,
+  Visual-Environment, Fluent, Abaqus, and helper tools;
+- ProCAST pipeline-plan validation and run-status parsing;
 - Fluent monitor/result status parsing;
 - Abaqus job-status parsing;
 - physical-time pressure-risk metrics;
-- processed-artifact indexing.
+- processed-artifact indexing;
+- manuscript evidence-dictionary validation.
 
-These seven functions are read-only, deterministic and independently testable.
+These eight functions are read-only, deterministic, and independently
+testable.
 
 ## Intentionally excluded
 
-- starting or stopping any solver;
-- administrator elevation;
-- GUI clicks or vendor sessions;
-- editing VDB, Fluent case/data or Abaqus input decks;
-- deleting locks or result files;
-- running long exports or simulations.
+- creating or modifying CAD geometry;
+- running arbitrary journals, macros, Python, Tcl, COM, or vendor APIs;
+- starting or stopping a solver;
+- administrator elevation or GUI automation;
+- editing solver databases, cases, decks, meshes, or results;
+- deleting locks or files.
 
-Those actions remain explicit skill-directed scripts so consent, vendor state
-and process ownership stay visible.
+Those actions remain explicit skill-directed local adapters so user intent,
+software version, license state, and process ownership stay visible.
 
 ## Client configuration
 
-After `pip install -e ".[mcp]"`, start `procast-fluent-abaqus-mcp`. The
-implementation uses `mcp.server.fastmcp.FastMCP` over stdio.
+After `pip install -e ".[mcp]"`, start `cae-simulation-mcp`. The implementation
+uses `mcp.server.fastmcp.FastMCP` over stdio. Historical console aliases remain
+available in version 0.3.

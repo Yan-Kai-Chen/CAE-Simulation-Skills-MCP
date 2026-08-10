@@ -1,0 +1,4 @@
+interface:
+  display_name: "HyperMesh Surface Meshing"
+  short_description: "Plan and validate controlled CFD surface meshes"
+  default_prompt: "Use $hypermesh-surface-meshing to prepare and validate a controlled HyperMesh CFD surface-meshing workflow."

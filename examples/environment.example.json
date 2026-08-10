@@ -1,31 +1,36 @@
 {
-  "schema": "procast_abaqus_environment_v1",
-  "name": "local_workstation",
+  "schema": "cae_simulation_environment_v1",
+  "name": "example_workstation",
+  "nx": {
+    "version": "<version>",
+    "journal_runner": "C:/vendor/NX/bin/run_journal.exe"
+  },
+  "solidworks": {
+    "version": "<version>",
+    "command_path": "C:/vendor/SolidWorks/SLDWORKS.exe"
+  },
+  "hypermesh": {
+    "version": "<version>",
+    "batch": "C:/vendor/Altair/hmbatch.exe"
+  },
   "procast": {
-    "version": "2022.0",
-    "root": "C:/vendor/ProCAST/2022.0",
-    "launcher": "C:/vendor/ProCAST/2022.0/bin/pamcmxdmp.bat"
+    "version": "<version>",
+    "launcher": "C:/vendor/ProCAST/bin/procast-launcher.bat"
   },
   "visual_environment": {
-    "version": "18.0",
-    "root": "C:/Program Files/ESI Group/Visual-Environment/18.0",
-    "batch": "C:/Program Files/ESI Group/Visual-Environment/18.0/Windows-x64/VEBatch.bat",
-    "common_resources": "C:/Program Files/ESI Group/Visual-Environment/18.0/COMMON/Resources"
+    "version": "<version>",
+    "batch": "C:/vendor/Visual-Environment/VEBatch.bat"
   },
   "fluent": {
-    "version": "2024 R1",
-    "command_path": "C:/Program Files/ANSYS Inc/v241/fluent/ntbin/win64/fluent.exe"
+    "version": "<version>",
+    "command_path": "C:/vendor/ANSYS/fluent.exe"
   },
   "abaqus": {
-    "version": "2025",
-    "command_path": "C:/vendor/SIMULIA/Commands/abaqus.bat"
+    "version": "<version>",
+    "command_path": "C:/vendor/SIMULIA/abaqus.bat"
   },
   "tools": {
     "python": "python",
     "ffmpeg": "ffmpeg"
-  },
-  "machine": {
-    "ve_requires_admin": false,
-    "solver_requires_admin": false
   }
 }

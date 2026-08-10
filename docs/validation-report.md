@@ -1,35 +1,37 @@
 # Local validation report
 
-Date: 2026-07-23
+Date: 2026-08-10
 
-Public repository:
-`https://github.com/Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP`
+Public repository target:
+`https://github.com/Yan-Kai-Chen/CAE-Simulation-Skills-MCP`
 
 ## Passed checks
 
-- Ten Python tests passed in a repository-local virtual environment.
+- Editable installation completed for version `0.3.0` with development and
+  MCP extras.
+- All `13` Python tests passed.
 - Ruff reported no issues.
-- All ten Codex skills passed `quick_validate.py`.
-- The optional MCP server registered exactly seven read-only tools:
+- All `16` Codex skills passed `quick_validate.py`.
+- The optional MCP server registered exactly eight read-only tools:
   `check_environment`, `plan_pipeline`, `get_run_status`,
   `get_fluent_run_status`, `get_job_status`,
-  `compute_pressure_risk_metrics`, and `index_artifacts`.
-- CLI smoke tests passed for environment checking, pipeline planning, Fluent
-  run inspection, and pressure-risk metric calculation.
-- No private workstation/project path was found outside ignored build files.
-- No raw or proprietary solver result file was included.
-- No credential, API key, bearer token, or private-key material was found.
-- GitHub Actions CI completed successfully on the initial public push. The
-  v0.2 Fluent expansion is checked again after publication.
+  `compute_pressure_risk_metrics`, `index_artifacts`, and
+  `validate_evidence_dictionary`.
+- The evidence-dictionary CLI accepted the four-row synthetic example with
+  four unique IDs and no incomplete rows.
+- The publication scan found no real workstation path, credential pattern,
+  raw CAD/mesh/solver payload, or file larger than 10 MiB. Two regex matches
+  were inspected and confirmed to be `:\s` text patterns, not drive paths.
+- `git diff --check` reported no whitespace error.
 
 ## Publication boundary
 
-The repository contains workflow knowledge, lightweight adapters, synthetic
-configuration examples, and deterministic read-only inspection tools. It does
-not include commercial software, licenses, meshes, raw solver databases, or
-case-specific research payloads.
+The repository contains workflow knowledge, synthetic configuration and data
+examples, portable contracts, and deterministic read-only inspection tools.
+It does not include commercial software, licenses, private CAD, meshes, solver
+databases, experiment images, or case-specific research values.
 
 ## Remaining external checks
 
-- Forward-test vendor adapters on a second licensed workstation if available.
-- Decide whether any B52-derived processed example may be released separately.
+- Verify GitHub Actions after the renamed repository receives version 0.3.
+- Forward-test licensed local adapters on another workstation when available.

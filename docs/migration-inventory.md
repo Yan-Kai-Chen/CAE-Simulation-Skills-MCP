@@ -2,32 +2,33 @@
 
 ## Source findings
 
-- The initial audit covered 14 project-local skills: 11 ProCAST and 3 Abaqus.
-- 72 files and approximately 279 kB inside the original skill directories.
-- 84 executable references across the skill text; all referenced basenames
-  were found in the private project.
-- 251 workstation/project absolute-path occurrences in the source skill tree.
-- Python cache files were present in two source skills and are excluded here.
-- No credential, API key, bearer token or private-key material was identified.
-- The v0.2 audit added the mature Fluent dewaxing, wax-shell load extraction,
-  pressure-risk metric, and three-solver coupling workflows. They were
-  distilled into portable contracts without copying private case assets.
+- Version 0.1 consolidated 14 ProCAST and Abaqus project workflows.
+- Version 0.2 added the complete Fluent dewaxing, wax-to-Shell load, fracture
+  risk, and three-solver coupling layer.
+- Version 0.3 adds six existing public-safe CAD and meshing workflows: NX safe
+  edit, NX solid modeling, NX surface repair, SolidWorks safe edit, reverse
+  modeling, and HyperMesh surface meshing.
+- The current public set contains 16 portable Codex skills and eight read-only
+  MCP tools.
 
 ## Migration decisions
 
-- Consolidate overlapping workflows into ten portable skills instead of
-  publishing path-heavy copies.
-- Preserve representative portable scripts only.
-- Replace private paths with environment JSON, command arguments and relative
-  repository paths.
-- Keep case-specific values as examples or private validation evidence.
-- Exclude raw simulation data and all vendor software.
+- Preserve workflow knowledge and evidence gates rather than copying
+  workstation-specific execution scripts.
+- Replace private paths with environment JSON, command arguments, and relative
+  artifact references.
+- Keep CAD mutation, meshing execution, solver execution, and GUI control in
+  explicit local adapters.
+- Add a generic evidence-dictionary contract and validator without publishing
+  case-specific fracture values.
+- Retain the historical Python import package and console aliases for version
+  0.3 compatibility while changing the distribution and repository identity.
 
 ## Publication decisions
 
-- Public owner/name: `Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP`.
+- Public owner/name: `Yan-Kai-Chen/CAE-Simulation-Skills-MCP`.
 - License: MIT.
-- Keep proprietary-paper screenshots and case-specific processed research
-  examples outside the public repository.
-- Forward-test each skill in a clean Codex project.
-- Test vendor adapters on a second workstation and software version.
+- Exclude raw geometry, meshes, solver databases, experiment images, private
+  material data, and workstation configuration.
+- Treat local licensed-software smoke tests as compatibility evidence rather
+  than universal vendor support guarantees.

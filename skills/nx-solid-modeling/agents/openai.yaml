@@ -1,0 +1,4 @@
+interface:
+  display_name: "NX Solid Modeling"
+  short_description: "Build controlled CFD-oriented solids in NX"
+  default_prompt: "Use $nx-solid-modeling to plan and validate controlled Siemens NX solid-modeling operations."

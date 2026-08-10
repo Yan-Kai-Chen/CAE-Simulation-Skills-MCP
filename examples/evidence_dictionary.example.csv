@@ -1,0 +1,5 @@
+id,category,quantity,value,unit,physical_time_s,criterion,route,claim_status,source_id
+T01,timing,First numerical damage,12.4,s,12.4,First positive cohesive damage,objective_onset,accepted_result,SUMMARY_A
+T02,timing,First verified vent,18.7,s,18.7,Connected full crack touches inner and exterior surfaces,primary_growth,accepted_result,SUMMARY_B
+O01,opening,Peak opening,0.21,mm,24.1,Maximum accepted crack opening,primary_growth,accepted_result,SUMMARY_B
+S01,scope,Absolute failure probability,not calibrated,-,,No specimen-specific calibration,study,not_claimed,REPORT_C

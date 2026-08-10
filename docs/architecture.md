@@ -3,42 +3,47 @@
 ## Engineering chain
 
 ```text
-ProCAST thermal evidence
-    -> coordinate/unit registration
-    -> Fluent full-cycle melting, expansion and drainage
-    -> Fluent-informed restrained-expansion pressure history
-    -> Abaqus global XFEM initiation
-    -> Abaqus local damage/opening
-    -> evidence and Agent feedback
+CAD creation / repair / reverse modeling
+    -> surface and solver meshing
+    -> ProCAST thermal and casting-process evidence
+    -> coordinate, unit and mesh registration
+    -> Fluent melting, expansion, drainage and load history
+    -> Abaqus stress, XFEM damage, opening and venting
+    -> evidence dictionary, figures and Agent feedback
 ```
 
-The three solvers answer different questions:
+Not every project uses every stage. The skills preserve stable contracts so a
+workflow can start from accepted upstream geometry, thermal evidence, or a
+solver-ready mesh without inventing the missing stages.
 
-- ProCAST supplies accepted upstream thermal and casting-process evidence.
-- Fluent resolves physical-time wax state, drainage and load release.
-- Abaqus resolves Shell stress, XFEM connectivity, damage and opening.
+## Software roles
 
-No field may silently change meaning between stages.
+- Siemens NX and SolidWorks create or edit controlled working-copy geometry.
+- Reverse modeling rebuilds rough or faceted inputs when direct repair is
+  insufficient.
+- HyperMesh prepares validated surface meshes and solver boundary naming.
+- ProCAST supplies casting-process and accepted thermal evidence.
+- Fluent resolves physical-time melt, drainage, and load-release behavior.
+- Abaqus resolves structural stress and fracture evidence.
+
+No handoff may silently change units, coordinates, boundary identity, physical
+time, field meaning, or evidence level.
 
 ## Software layers
 
 ```text
 User / Codex
     |
-    +-- Skills: workflow reasoning, physics and evidence contracts
+    +-- Skills: workflow reasoning, engineering contracts and claim boundaries
     |
-    +-- CLI: deterministic read-only checks and metrics
+    +-- CLI: deterministic read-only checks, metrics and validation
     |
-    +-- MCP (stdio): the same read-only core as seven tools
+    +-- MCP (stdio): the same read-only core as eight tools
     |
-    +-- Vendor adapters: explicit ProCAST / VE / Fluent / Abaqus scripts
+    +-- Local adapters: explicit CAD / meshing / solver scripts
             |
-            +-- Licensed local installations and private case data
+            +-- Licensed installations and private project data
 ```
 
-Skills decide what constitutes a valid workflow. Core Python implements stable
-vendor-independent reads. Vendor adapters remain explicit because they depend
-on version, license, permissions and live solver state.
-
-A future mutation-capable MCP must remain a separate package with an
-authorization protocol, run ownership and process-identity checks.
+Mutation-capable adapters remain outside the public MCP surface so version,
+license, permissions, run ownership, and user intent remain visible.

@@ -8,6 +8,17 @@ dist/
 build/
 
 # Vendor solver payloads and engineering data
+*.SLDPRT
+*.SLDASM
+*.sldprt
+*.sldasm
+*.x_t
+*.x_b
+*.step
+*.stp
+*.stl
+*.hm
+*.msh
 *.odb
 *.sim
 *.prt

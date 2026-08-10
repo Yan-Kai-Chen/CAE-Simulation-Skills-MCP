@@ -1,4 +1,4 @@
 interface:
   display_name: "Abaqus Wax-Shell Fracture"
-  short_description: "Run wax-pressure-driven Abaqus XFEM workflows"
-  default_prompt: "Use $abaqus-wax-shell-fracture to build and assess this wax-driven Shell XFEM calculation."
+  short_description: "Validate onset, growth, venting, and feedback"
+  default_prompt: "Use $abaqus-wax-shell-fracture to build and assess the objective onset and primary full-growth routes for this wax-driven Shell XFEM calculation."

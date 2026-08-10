@@ -27,11 +27,21 @@ def check_environment(config_path: str | Path) -> dict[str, Any]:
     """Validate configured vendor/tool paths without launching any application."""
     source = Path(config_path).expanduser().resolve()
     data = load_json(source)
-    if data.get("schema") != "procast_abaqus_environment_v1":
-        raise ValueError("schema must be procast_abaqus_environment_v1")
+    supported_schemas = {"procast_abaqus_environment_v1", "cae_simulation_environment_v1"}
+    if data.get("schema") not in supported_schemas:
+        raise ValueError("schema must be procast_abaqus_environment_v1 or cae_simulation_environment_v1")
 
     checks: list[dict[str, Any]] = []
-    for group_name in ("procast", "visual_environment", "fluent", "abaqus", "tools"):
+    for group_name in (
+        "nx",
+        "solidworks",
+        "hypermesh",
+        "procast",
+        "visual_environment",
+        "fluent",
+        "abaqus",
+        "tools",
+    ):
         group = data.get(group_name, {})
         if not isinstance(group, dict):
             continue
@@ -50,7 +60,11 @@ def check_environment(config_path: str | Path) -> dict[str, Any]:
                 }
             )
 
-    required = [item for item in checks if item["key"] in {"launcher", "batch", "command_path"}]
+    required = [
+        item
+        for item in checks
+        if item["key"] in {"launcher", "batch", "command_path", "journal_runner"}
+    ]
     return {
         "schema": data["schema"],
         "config_path": str(source),

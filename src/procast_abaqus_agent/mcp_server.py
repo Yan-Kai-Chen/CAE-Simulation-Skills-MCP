@@ -3,6 +3,7 @@ from __future__ import annotations
 from .abaqus import get_job_status
 from .artifacts import index_artifacts
 from .config import check_environment
+from .evidence import validate_evidence_dictionary
 from .fluent import get_fluent_run_status
 from .procast import get_run_status, plan_pipeline
 from .risk import compute_pressure_risk_metrics
@@ -15,10 +16,11 @@ def build_server():
         raise RuntimeError('Install the optional MCP dependency with: pip install -e ".[mcp]"') from exc
 
     server = FastMCP(
-        "ProCAST-Fluent-Abaqus Batch MCP",
+        "CAE Simulation Skills MCP",
         instructions=(
-            "Read-only engineering tools for environment checks, ProCAST/Fluent/Abaqus "
-            "status inspection, pressure-risk metrics, and artifact indexing."
+            "Read-only engineering tools for CAD/CAE environment checks, "
+            "ProCAST/Fluent/Abaqus status inspection, pressure-risk metrics, "
+            "artifact indexing, and evidence-dictionary validation."
         ),
     )
     server.tool()(check_environment)
@@ -28,6 +30,7 @@ def build_server():
     server.tool()(get_job_status)
     server.tool()(compute_pressure_risk_metrics)
     server.tool()(index_artifacts)
+    server.tool()(validate_evidence_dictionary)
     return server
 
 

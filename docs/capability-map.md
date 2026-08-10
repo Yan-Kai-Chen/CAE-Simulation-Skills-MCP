@@ -1,11 +1,16 @@
 # Capability map
 
-The private project accumulated 19 relevant local workflows. Version 0.2
-consolidates them into 10 portable skills.
+Version 0.3 consolidates the established solver workflows plus six public-safe
+CAD and meshing workflows into 16 portable skills.
 
-| Original project skill | Portable skill | Disposition |
+| Source workflow | Portable skill | Role |
 |---|---|---|
-| procast-control-orchestrator | procast-fluent-abaqus-coupling | Cross-solver routing |
+| NX safe edit | nx-safe-edit | Working-copy inspection and bounded edits |
+| NX solid modeling | nx-solid-modeling | Primitives, booleans, transforms and CFD domains |
+| NX surface repair | nx-surface-repair | Sew, heal, thicken and sheet closure |
+| SolidWorks safe edit | solidworks-safe-edit | Controlled feature/dimension edits and STEP export |
+| Reverse modeling | reverse-cad-modeling | STL/facet/B-Rep reconstruction |
+| HyperMesh meshing | hypermesh-surface-meshing | Surface mesh, zones and quality handoff |
 | procast-solver-setup-control | procast-control-workflows | Setup and persistence |
 | procast-solver-launch-control | procast-control-workflows | Launch/status/stop contract |
 | procast-production-run-control | procast-control-workflows | Target-step and restart |
@@ -21,9 +26,10 @@ consolidates them into 10 portable skills.
 | export-model-surface-distribution-statistics | fluent-wax-shell-load-extraction | Area-weighted fields |
 | w11-cracking-risk | fluent-fracture-risk-metrics | Load/risk interpretation |
 | wax-melt-single-case-risk-metrics | fluent-fracture-risk-metrics | Reproducible metrics |
-| abaqus-lee-pvt-shell-fracture | abaqus-wax-shell-fracture | XFEM execution |
+| abaqus-lee-pvt-shell-fracture | abaqus-wax-shell-fracture | Objective onset and full-growth XFEM |
 | abaqus-xfem-fracture-visualization | abaqus-xfem-visualization | Figures and validators |
-| abaqus-shell-fracture-paper-workflow | simulation-evidence-reporting | Evidence hierarchy |
+| abaqus-shell-fracture-paper-workflow | simulation-evidence-reporting | Evidence hierarchy and data dictionary |
+| procast-control-orchestrator | procast-fluent-abaqus-coupling | Cross-solver routing |
 
-Private case labels, calibrated-looking constants and machine-recovery records
-remain validation evidence, not public defaults.
+Private case labels, workstation paths, geometry, meshes, material values, and
+raw solver outputs remain outside the portable skills.

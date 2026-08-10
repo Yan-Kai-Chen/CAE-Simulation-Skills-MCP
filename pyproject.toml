@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "procast-abaqus-batch-mcp"
-version = "0.2.0"
-description = "Codex skills, batch utilities, and an MCP server for ProCAST-Fluent-Abaqus engineering workflows."
+name = "cae-simulation-skills-mcp"
+version = "0.3.0"
+description = "Codex skills, batch utilities, and a read-only MCP server for CAD and CAE engineering workflows."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
@@ -19,14 +19,16 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP"
-Issues = "https://github.com/Yan-Kai-Chen/ProCAST-Abaqus-Batch-MCP/issues"
+Repository = "https://github.com/Yan-Kai-Chen/CAE-Simulation-Skills-MCP"
+Issues = "https://github.com/Yan-Kai-Chen/CAE-Simulation-Skills-MCP/issues"
 
 [project.optional-dependencies]
 mcp = ["mcp[cli]>=1.0"]
 dev = ["pytest>=8", "ruff>=0.6", "PyYAML>=6"]
 
 [project.scripts]
+cae-simulation = "procast_abaqus_agent.cli:main"
+cae-simulation-mcp = "procast_abaqus_agent.mcp_server:main"
 procast-abaqus = "procast_abaqus_agent.cli:main"
 procast-abaqus-mcp = "procast_abaqus_agent.mcp_server:main"
 procast-fluent-abaqus = "procast_abaqus_agent.cli:main"
