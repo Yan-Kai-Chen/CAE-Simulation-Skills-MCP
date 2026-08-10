@@ -26,6 +26,9 @@ Public repository target:
   raw CAD/mesh/solver payload, or file larger than 10 MiB. Two regex matches
   were inspected and confirmed to be `:\s` text patterns, not drive paths.
 - `git diff --check` reported no whitespace error.
+- GitHub Actions run `31361290132` passed on Python 3.10 and 3.12 before the
+  repository was renamed to `CAE-Simulation-Skills-MCP`; the renamed remote
+  was then fetched successfully through the required proxy.
 
 ## Publication boundary
 
@@ -36,5 +39,4 @@ databases, experiment images, or case-specific research values.
 
 ## Remaining external checks
 
-- Verify GitHub Actions after the renamed repository receives version 0.3.
 - Forward-test licensed local adapters on another workstation when available.
