@@ -40,3 +40,17 @@ def test_procast_status_parses_step_and_fatal(tmp_path):
     assert result["last_step"] == 12
     assert result["state"] == "failed"
     assert result["fatal_count"] == 1
+
+
+def test_procast_status_reads_native_completion_and_progress(tmp_path):
+    (tmp_path / "demop.out").write_text(
+        "  STEP NO.    48 TIME = 119.0 DT = 1.0\n"
+        "  STEP NO.    49 TIME = 120.0 DT = 1.0\n"
+        "  NSTEP = 99999\n"
+        "  TFINAL reached\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "launcher_status.json").write_text('{"state": "running"}', encoding="utf-8")
+    result = get_run_status(tmp_path, "demo")
+    assert result["last_step"] == 49
+    assert result["state"] == "completed"

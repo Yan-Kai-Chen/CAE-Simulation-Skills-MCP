@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProCAST Model Preparation"
+  short_description: "Import, edit, and verify ProCAST models"
+  default_prompt: "Use $procast-model-preparation to prepare and verify this ProCAST model from the supplied geometry, mesh, or VDB."

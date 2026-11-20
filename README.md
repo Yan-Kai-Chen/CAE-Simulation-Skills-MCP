@@ -3,7 +3,7 @@
 [![CI](https://github.com/Yan-Kai-Chen/CAE-Simulation-Skills-MCP/actions/workflows/ci.yml/badge.svg)](https://github.com/Yan-Kai-Chen/CAE-Simulation-Skills-MCP/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-9E1B32.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-6EA8C6.svg)](pyproject.toml)
-[![Codex skills](https://img.shields.io/badge/Codex_skills-16-92C5DE.svg)](skills)
+[![Codex skills](https://img.shields.io/badge/Codex_skills-18-92C5DE.svg)](skills)
 [![MCP tools](https://img.shields.io/badge/MCP_tools-8-3F7894.svg)](docs/mcp-boundary.md)
 
 Portable Codex skills, deterministic batch utilities, and a read-only MCP
@@ -56,9 +56,13 @@ software packages.
 
 ### ProCAST
 
-- `procast-control-workflows`
-- `procast-results-export`
-- `procast-field-transfer`
+- [procast-model-preparation](skills/procast-model-preparation/SKILL.md)
+- [procast-control-workflows](skills/procast-control-workflows/SKILL.md)
+- [procast-results-export](skills/procast-results-export/SKILL.md)
+- [procast-field-transfer](skills/procast-field-transfer/SKILL.md)
+
+Use the [ProCAST workflow guide](docs/procast-workflows.md) to start with an
+import or design edit, a solver run, or saved results.
 
 ### Fluent
 
@@ -69,6 +73,7 @@ software packages.
 ### Abaqus and evidence
 
 - `abaqus-wax-shell-fracture`
+- [abaqus-brittle-fracture-generalization](skills/abaqus-brittle-fracture-generalization/SKILL.md)
 - `abaqus-xfem-visualization`
 - `simulation-evidence-reporting`
 
@@ -78,6 +83,10 @@ software packages.
 
 See [the capability map](docs/capability-map.md) for source consolidation and
 handoff roles.
+
+For adapting the established fracture workflow to ceramic cores, refractories,
+glass, rock, concrete, or brittle interfaces, see the
+[ceramic-core fracture extension guide](docs/ceramic-core-fracture-extension-zh.md).
 
 ## MCP tools
 

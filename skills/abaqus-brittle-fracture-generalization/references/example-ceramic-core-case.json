@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "case_id": "ceramic-core-demo",
+  "objective": "screening",
+  "units": {
+    "length": "mm",
+    "stress": "MPa",
+    "time": "s",
+    "temperature": "degC"
+  },
+  "geometry": {
+    "mesh": "inputs/ceramic_core_demo.inp",
+    "coordinate_frame": "casting_global",
+    "revision": "demo-r1"
+  },
+  "solver": {
+    "product": "Abaqus/Standard",
+    "method": "intact_screen",
+    "step": "static_general"
+  },
+  "load": {
+    "source": "ProCAST",
+    "type": [
+      "temperature",
+      "support_contact"
+    ],
+    "time_basis": "physical_seconds",
+    "regions": [
+      "BODY",
+      "SUPPORT"
+    ]
+  },
+  "material": {
+    "elastic": "temperature_dependent",
+    "thermal": "temperature_dependent"
+  },
+  "validation": {
+    "claim_level": "screening"
+  }
+}

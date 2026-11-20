@@ -16,7 +16,7 @@ parts, wall sides, openings or newly created geometry.
 
 ## Extrapolation
 
-Use zero outside support only when zero has physical meaning, such as inactive
-contact pressure. For temperature or stress, mark unsupported values as
-extrapolated or failed. Keep drain-port or added-feature extrapolation separate
-from directly observed values.
+Assign zero pressure where independent evidence identifies inactive contact.
+Mark unknown support as missing or failed. If a task permits extrapolation,
+record where it was used, how it was generated, and its distance from supported
+data. Retain the original supported samples for comparison.

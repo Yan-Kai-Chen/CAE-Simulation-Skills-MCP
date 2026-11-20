@@ -4,23 +4,25 @@
 
 - environment JSON containing installation and tool paths;
 - copied VDB or copied `p.dat`;
-- case prefix, run root, core count and finite target;
-- explicit authorization state for solver mutations.
+- case prefix, run root, compatible MPI layout and requested endpoint;
+- the solver actions authorized for the current task.
 
-## Ordered stages
+## Applicable stages
 
-`preflight -> setup -> persistence check -> DataCAST -> launch -> monitor ->
-target stop -> restart preparation -> -skippre continuation -> final status`
+For a new run, confirm inputs, persist the intended configuration, preprocess
+with DataCAST, and launch and monitor to the requested endpoint. For an existing
+run, enter at inspection, target stop, restart, or result handoff as needed.
+Use the plan-only mode to inspect a new job configuration or uncertain paths.
 
 ## Required records
 
-Preserve settings, before/after snapshots, console logs, launch identity,
-status snapshots, stop/restart manifests and the final process count. Treat
-administrator mode as a machine-specific fallback rather than a universal
-ProCAST requirement.
+Preserve settings, logs, launch identity, and the manifests that correspond to
+actions performed. Record the terminal condition and the physical time of the
+last saved field used downstream. Follow the local installation requirements
+for license, executable, and privilege settings.
 
 ## Parameter rules
 
-Keep thermal and mechanical storage frequencies aligned when downstream field
-handoffs require common time levels. Change only requested settings. Reload the
-saved VDB and compare values before launching a solve.
+Choose common storage levels when the intended restart or downstream
+application requires them. Different cadences can be joined on their verified
+physical times for postprocessing. Compare any changed VDB setting on reload.

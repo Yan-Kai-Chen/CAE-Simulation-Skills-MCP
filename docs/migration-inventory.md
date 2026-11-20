@@ -8,8 +8,9 @@
 - Version 0.3 adds six existing public-safe CAD and meshing workflows: NX safe
   edit, NX solid modeling, NX surface repair, SolidWorks safe edit, reverse
   modeling, and HyperMesh surface meshing.
-- The current public set contains 16 portable Codex skills and eight read-only
-  MCP tools.
+- The v0.3 release contained 16 portable Codex skills. The current repository
+  also includes ProCAST model preparation and Abaqus brittle fracture
+  generalization, for 18 skills and eight read-only MCP tools.
 
 ## Migration decisions
 

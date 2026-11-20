@@ -51,7 +51,9 @@ $nstep = Last-MatchValue '(?im)NSTEP\s*=\s*(\d+)'
 $lastStep = Last-MatchValue '(?im)^\s*STEP NO\.\s+(\d+)'
 $lastTime = Last-MatchValue '(?im)^\s*STEP NO\.\s+\d+\s+TIME\s*=\s*([^\s]+)'
 $lastWallClock = Last-MatchValue '(?im)^\s*WALL CLOCK TIME\s*=\s*([0-9.]+)'
-$normalTermination = [regex]::IsMatch($text, '(?i)normal termination|calculation completed')
+$normalTermination = [regex]::IsMatch(
+    $text, '(?i)normal termination|calculation completed|\bTFINAL[ \t]+reached\b'
+)
 $errorMatches = [regex]::Matches($text, '(?im)^.*(?:FATAL|ABORT|LICENSE.*FAIL|ERROR:).*$')
 $errors = @($errorMatches | ForEach-Object { $_.Value.Trim() } | Select-Object -Unique)
 
@@ -59,7 +61,7 @@ $state = 'prepared'
 if ($datacast.Count -gt 0) { $state = 'preprocessing' }
 if ($ranks.Count -gt 0) { $state = 'running' }
 if ($errors.Count -gt 0 -and $ranks.Count -eq 0) { $state = 'failed' }
-if ($normalTermination -and $ranks.Count -eq 0) { $state = 'completed' }
+if ($normalTermination -and $ranks.Count -eq 0 -and $errors.Count -eq 0) { $state = 'completed' }
 if ($null -ne $lastStep -and $ranks.Count -eq 0 -and -not $normalTermination -and
     $errors.Count -eq 0) { $state = 'stopped_after_progress' }
 

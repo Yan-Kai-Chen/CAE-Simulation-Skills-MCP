@@ -1,0 +1,4 @@
+interface:
+  display_name: "Abaqus Brittle Fracture Generalization"
+  short_description: "Screen brittle risk and select Abaqus crack models"
+  default_prompt: "Use $abaqus-brittle-fracture-generalization to compare the saved fields and determine whether this task needs an explicit Abaqus crack model."

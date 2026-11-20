@@ -7,8 +7,9 @@ description: Register dissimilar ProCAST, Fluent, CAD, or Abaqus meshes and tran
 
 ## Treat correspondence as geometry
 
-Never reuse node IDs across different meshes. Normalize units and body scope,
-then register source and target coordinates before interpolation.
+Verify mesh identity and body scope before using original IDs. For different
+meshes, normalize units and register source and target coordinates before
+interpolation.
 
 Read `references/mapping-contract.md` before a production transfer.
 
@@ -25,6 +26,15 @@ Read `references/mapping-contract.md` before a production transfer.
    temperature or von Mises stress.
 
 Use `scripts/procast_correspondence_csv.py` for generic point-cloud tables.
+
+## Align time and physical meaning
+
+Use the step and time recorded for each field and run segment. Compare within
+common coverage, and document the interpolation and its validity for the
+quantity being transferred. Retain jump events such as a change of contact
+or loading regime. For surface loads verify the side, normal, units, and
+resultant where applicable. Record whether the target receives an applied
+load, initial state, or field for comparison.
 
 ## Reconstruct geometry
 

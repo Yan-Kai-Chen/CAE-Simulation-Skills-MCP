@@ -1,6 +1,6 @@
 ---
 name: procast-results-export
-description: Export numerical fields and native visual media from completed ProCAST Visual-Viewer Cast results. Use when Codex must select PATRAN versus Abaqus export formats, extract temperature, contact pressure, stress or displacement every N steps, batch completed cases, render fixed-range native contour frames, compose videos, or validate export completeness.
+description: Extract and visualize saved ProCAST fields by physical time, location, and unit. Use for temperature, contact pressure, stress tensors, displacement vectors, fixed-range contour frames, or comparison-ready datasets.
 ---
 
 # ProCAST Results Export
@@ -18,21 +18,31 @@ Read `references/field-format-policy.md` before selecting a format.
 
 ## Export
 
-1. Resolve the loadable result entry and requested part visibility.
-2. Normalize requested units before export.
-3. Select an explicit ascending step list; preserve every-N cadence and include
-   step zero when required.
-4. Write outside the raw case folder.
-5. Record input, field, unit, requested/actual step, output size and row/value
-   statistics in a manifest.
+1. Resolve the current loadable result prefix, actual parts, and available
+   field records. For a run in progress, select a coherent stored frame.
+2. Choose and verify units and the node, element, or surface location of
+   the exported quantity. Preserve stress components and signed displacement
+   vectors when requested.
+3. Match the field's saved steps to physical time, including restart segments.
+   Select an explicit list from the actual records.
+4. Export outside the source run. Record field, unit, location, requested
+   and actual step/time, and the applicable row and value statistics.
 
-For native media, run `scripts/start_ve_native_field_image_export.ps1`, then
-`scripts/compose_procast_native_field_videos.py`. Supply installation paths via
-environment variables or command arguments.
+For native media, run `scripts/start_ve_native_field_image_export.ps1` with the
+current input, field, visible parts, saved steps, and legend range. Set the
+animation increment and end so the exporter can reach every requested step.
+Use a common range, camera and deformation scale for matched views.
+For video, pass the actual step-to-time CSV to
+`scripts/compose_procast_native_field_videos.py`.
 
 ## Validate
 
-Require expected file counts, nonempty outputs, finite parsed values, stable
-units and successful image/video decoding. Inspect the first, middle and last
-native frames at original resolution. Do not infer a field from an all-sentinel
-or all-negative export; switch to the validated higher-fidelity format.
+Check expected files, finite parsed data, actual units, and relevant samples.
+For rendered media, check frame coverage, legend and decode. Verify apparently
+empty or sentinel-like exports by refreshing the active contour and checking
+the selected frame and format. Use the full tensor route when stress
+components are needed.
+
+For cross-case output, use [field transfer](../procast-field-transfer/SKILL.md)
+to align physical times, units, regions, and mesh correspondence. Record
+common coverage and any interpolation.

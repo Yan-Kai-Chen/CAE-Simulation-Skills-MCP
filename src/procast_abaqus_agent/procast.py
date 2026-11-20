@@ -22,12 +22,16 @@ STAGES = (
     "video_compose",
 )
 
-STEP_PATTERNS = (
-    re.compile(r"\b(?:STEP|NSTEP)\s*[=:]?\s*(\d+)\b", re.IGNORECASE),
-    re.compile(r"\bTIME\s+STEP\s+(\d+)\b", re.IGNORECASE),
+STEP_RE = re.compile(
+    r"^[ \t]*(?:TIME[ \t]+)?STEP(?:[ \t]+NO\.)?[ \t]*[=:]?[ \t]*(\d+)\b",
+    re.IGNORECASE | re.MULTILINE,
 )
 FATAL_RE = re.compile(r"fatal|abort|license.*fail|segmentation|error termination", re.IGNORECASE)
-COMPLETE_RE = re.compile(r"normal end|analysis completed|end of procast", re.IGNORECASE)
+COMPLETE_RE = re.compile(
+    r"normal end|normal termination|analysis completed|calculation completed|"
+    r"end of procast|\bTFINAL[ \t]+reached\b",
+    re.IGNORECASE,
+)
 
 
 def plan_pipeline(job_path: str | Path) -> dict[str, Any]:
@@ -76,9 +80,7 @@ def get_run_status(run_root: str | Path, prefix: str) -> dict[str, Any]:
     root = Path(run_root).expanduser().resolve()
     pout = root / f"{prefix}p.out"
     text = _tail(pout)
-    steps: list[int] = []
-    for pattern in STEP_PATTERNS:
-        steps.extend(int(match.group(1)) for match in pattern.finditer(text))
+    steps = STEP_RE.findall(text)
     fatal_lines = [line.strip() for line in text.splitlines() if FATAL_RE.search(line)]
     stop_manifest = root / "stop_manifest.json"
     launcher_status = root / "launcher_status.json"
@@ -88,10 +90,10 @@ def get_run_status(run_root: str | Path, prefix: str) -> dict[str, Any]:
         state = "failed" if fatal_lines else "completed" if COMPLETE_RE.search(text) else "progress_recorded"
     if stop_manifest.exists():
         state = "stopped"
-    elif launcher_status.exists():
+    elif launcher_status.exists() and state not in ("failed", "completed"):
         try:
             status_data = json.loads(launcher_status.read_text(encoding="utf-8-sig"))
-            if status_data.get("state"):
+            if isinstance(status_data, dict) and status_data.get("state"):
                 state = str(status_data["state"])
         except (OSError, ValueError, TypeError):
             pass
@@ -102,7 +104,7 @@ def get_run_status(run_root: str | Path, prefix: str) -> dict[str, Any]:
         "state": state,
         "p_out": str(pout),
         "p_out_exists": pout.exists(),
-        "last_step": max(steps) if steps else None,
+        "last_step": int(steps[-1]) if steps else None,
         "fatal_count": len(fatal_lines),
         "fatal_lines": fatal_lines[-10:],
         "stop_manifest_exists": stop_manifest.exists(),
