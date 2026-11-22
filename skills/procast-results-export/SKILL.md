@@ -46,3 +46,6 @@ components are needed.
 For cross-case output, use [field transfer](../procast-field-transfer/SKILL.md)
 to align physical times, units, regions, and mesh correspondence. Record
 common coverage and any interpolation.
+
+For enclosure view factors, follow the [RDEBUG export and analysis workflow](../../docs/procast-radiation.md#3-export-and-interpret-native-factors-with-rdebug)
+and keep the original radiation face IDs.

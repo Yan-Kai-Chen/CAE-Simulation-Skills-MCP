@@ -37,6 +37,13 @@ verify spatial coverage and flag unsupported regions. Choose comparison
 metrics according to the application and retain the corresponding region,
 time range, and units.
 
+## Enclosure radiation
+
+The [general radiation workflow](procast-radiation.md) covers normal and
+topology checks, actual ProCAST view factor generation, and `RDEBUG=2`
+result export. Use the geometry CLI to compare orientation and shadowing
+and the native table analyzer to compare computed face-to-group factors.
+
 The [portable CLI and MCP](mcp-boundary.md) provide read-only planning,
 inspection, and evidence tools. Model edits and licensed solver actions use
 local, version-aware adapters. The repository's environment and job examples

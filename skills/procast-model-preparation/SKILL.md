@@ -50,6 +50,9 @@ After saving, reopen the VDB and remeasure the target and affected neighbors.
 - Identify both sides of each interface. Verify thermal exchange, mechanical
   contact assumptions, and connectivity separately. Record search settings
   alongside the independently measured geometric clearance.
+- For a radiative cavity, use the [radiation workflow](../../docs/procast-radiation.md)
+  to confirm enclosure and workpiece orientation, participating surfaces and
+  actual view factor generation after DataCAST.
 - For a solve-ready handoff, run Data Checks and inspect the generated
   DataCAST mesh and condition assignments for the current prefix. Rebuild
   preprocessing after solver-relevant geometry changes. Use a fresh start for

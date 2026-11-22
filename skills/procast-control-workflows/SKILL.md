@@ -38,6 +38,7 @@ processes to a run by its recorded launcher and case information.
 |---|---|
 | Import or DataCAST failure | First error, current file prefix, current VDB assignments, and generated inputs |
 | Startup stalls | Initialization log, license or MPI error, reported ranks, and CPU or file growth |
+| View factors fail or a face sees no receivers | Check the converted enclosure and offending face using the [radiation workflow](../../docs/procast-radiation.md). |
 | Repeated retries or shrinking increments | Accepted time versus attempted time, the iteration block, and one relevant saved-field check |
 | Unexpected contact or frozen fields | Field activation, native frame times, selection and units, then actual motion and physical conditions |
 

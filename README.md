@@ -64,6 +64,10 @@ software packages.
 Use the [ProCAST workflow guide](docs/procast-workflows.md) to start with an
 import or design edit, a solver run, or saved results.
 
+The [enclosure radiation guide](docs/procast-radiation.md) includes
+cavity normals, geometric radiation angles, view factor estimates, and
+native RDEBUG result analysis.
+
 ### Fluent
 
 - `fluent-dewaxing-batch-workflows`

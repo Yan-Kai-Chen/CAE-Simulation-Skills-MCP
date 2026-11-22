@@ -1,0 +1,22 @@
+{
+  "schema": "radiation_geometry_v1",
+  "length_unit": "m",
+  "vertices": [
+    [0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0],
+    [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]
+  ],
+  "faces": [
+    {"id": "bottom:1", "group": "bottom", "nodes": [0, 1, 2]},
+    {"id": "bottom:2", "group": "bottom", "nodes": [0, 2, 3]},
+    {"id": "top:1", "group": "top", "nodes": [4, 6, 5]},
+    {"id": "top:2", "group": "top", "nodes": [4, 7, 6]},
+    {"id": "left:1", "group": "left", "nodes": [0, 3, 7]},
+    {"id": "left:2", "group": "left", "nodes": [0, 7, 4]},
+    {"id": "right:1", "group": "right", "nodes": [1, 5, 6]},
+    {"id": "right:2", "group": "right", "nodes": [1, 6, 2]},
+    {"id": "front:1", "group": "front", "nodes": [0, 4, 5]},
+    {"id": "front:2", "group": "front", "nodes": [0, 5, 1]},
+    {"id": "back:1", "group": "back", "nodes": [3, 2, 6]},
+    {"id": "back:2", "group": "back", "nodes": [3, 6, 7]}
+  ]
+}
